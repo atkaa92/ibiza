@@ -1,4 +1,4 @@
-{{--  @extends('admin.layouts.master')
+@extends('admin.layouts.master')
 
 @section('content')
 <section id="breadcrumb">
@@ -26,4 +26,4 @@
             </div>
         </div>
     </div>
-@endsection  --}}
+@endsection
