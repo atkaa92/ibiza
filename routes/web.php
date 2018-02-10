@@ -32,6 +32,12 @@ Route::group(
         Route::get('test',function(){
             return view('home');
         });
+
+        Route::get('/', 'PagesController@home');
+        Route::get('/about', 'PagesController@about');
+        Route::get('/rooms', 'PagesController@rooms');
+        Route::get('/gallery', 'PagesController@gallery');
+        Route::get('/contacts', 'PagesController@contacts');
     });
 
 Auth::routes();
