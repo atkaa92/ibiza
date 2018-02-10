@@ -23,8 +23,4 @@
         <span class="fa fa-picture-o" aria-hidden="true"></span> Gallery
     </a>
 
-    <a href="{{ url('/admin/users') }}" class="list-group-item">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users 
-    </a>
-
 </div>
