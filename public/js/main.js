@@ -178,28 +178,6 @@ $(document).on('click','.addWhite',function () {
     form.submit()
 })
 
-/*  Filemanager */
-$('.all-images').fancybox({
-    'width'		: 900,
-    'height'	: 600,
-    'type'		: 'iframe',
-    'autoScale'    	: false
-});
-
-function responsive_filemanager_callback(field_id){
-    var url=jQuery('#'+field_id).val();
-    $('#'+field_id).prev().attr('src',url);
-    if(field_id == 'prod_img_url'){
-        var url=jQuery('#'+field_id).attr('id','')
-        $('#general_img').append(`
-            <div class="single-image">
-                <img src="http://gj.dev/images/no-image.png" width="100%">
-                <input type="text" class="form-control product-img" name="product-img[]" id="prod_img_url" disabled="">
-                <button type="button" data-src="{{ url('/images/no-image.png') }}" class="btn btn-danger btn-block img-rm" style="margin-top: 5px">Remove Image</button>
-            </div>
-        `)
-    }
-}
 //=======================================================================================
 
 $('.list-parent').click(function () {
