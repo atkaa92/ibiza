@@ -15,6 +15,25 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
+
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ],
+    function()
+    {
+        /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
+        Route::get('/', function()
+        {
+            return view('home');
+        });
+
+        Route::get('test',function(){
+            return view('home');
+        });
+    });
+
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth',]], function() {
