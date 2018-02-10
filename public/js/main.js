@@ -23,9 +23,9 @@ $.ajaxSetup({
 });
 //                                    Footer position
 // ========================================================================================================
-// if ($("body").height() < $(window).height()){
-//     $("footer").css("margin-top",  $(window).height() - $('body').height());
-// }
+if ($("body").height() < $(window).height()){
+    $("footer").css("margin-top",  $(window).height() - $('body').height());
+}
 
 //                                    Message pop
 // ========================================================================================================
