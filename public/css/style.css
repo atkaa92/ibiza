@@ -1,7 +1,24 @@
 body{
   background:#f4f4f4;
 }
-
+textarea{
+  resize: vertical;
+  min-height: 150px;
+}
+input{
+  min-width: 203px;
+}
+input[type=checkbox]{
+  display: inline;
+  min-width: inherit!important;
+}
+.one-img{
+  margin-bottom: 15px;
+}
+.room-albom{
+  max-height: 150px;
+  overflow-y:scroll;
+}
 /* Navbar */
 .navbar{
   min-height: 33px !important;

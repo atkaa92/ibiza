@@ -23,6 +23,8 @@ class CreateRoomsTable extends Migration
             $table->text('hy_desc');
             $table->integer('price');
             $table->integer('duration');
+            $table->text('images');
+            $table->text('features');
             $table->timestamps();
         });
     }

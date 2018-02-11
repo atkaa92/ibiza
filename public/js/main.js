@@ -96,3 +96,33 @@ $('.list-parent').click(function () {
         tip.addClass('fa-angle-double-right')
     }
 })
+
+
+$('.open-filemanager').fancybox({
+    'width'		: 900,
+    'height'	: 600,
+    'type'		: 'iframe',
+    'autoScale'    	: false
+});
+
+function responsive_filemanager_callback(field_id){
+    $('#'+field_id).attr('name','images[]')
+    $('#'+field_id).prev().attr('src',$('#'+field_id).val());
+    $('#'+field_id).parent().append(`
+        <button class="btn btn-danger btn-block rm-image">
+        <i class="fa fa-remove"></i>
+        Remove
+        </button>
+    `)
+    $('#'+field_id).attr('id','');
+    $('.room-albom').prepend(`
+        <div class="one-img">
+            <img src="/images/no-image.png" width="100%">
+            <input type="hidden" id="room_image">
+        </div>
+    `)
+}
+
+$(document).on('click','.rm-image',function () {
+    $(this).parent().remove()
+})

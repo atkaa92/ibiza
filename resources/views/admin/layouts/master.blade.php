@@ -12,7 +12,9 @@
         <link href="{{ url('css/jquery-ui.min.css') }}" rel="stylesheet">
         <link href="{{ url('css/font-awesome.min.css') }}" rel="stylesheet">
         <link href="{{ url('css/style.css') }}" rel="stylesheet">
+        <link href="{{ url('css/fancybox.css') }}" rel="stylesheet">
         <script src="{{ url('/js/jquery.min.js') }}"></script>
+        <script src="{{ url('/js/fancybox.js') }}"></script>
         @stack('stylesheets')
     </head>
     <body>

@@ -17,7 +17,6 @@ class CreateMediaTable extends Migration
             $table->increments('id');
             $table->string('format', 50)->comment('photo, video, audio');
             $table->string('url', 200)->nullable();
-            $table->timestamps();
         });
     }
 
