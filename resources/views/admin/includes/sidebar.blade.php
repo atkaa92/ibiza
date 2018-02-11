@@ -15,8 +15,8 @@
         <span class="fa fa-certificate" aria-hidden="true"></span> Features <i class="fa fa-angle-double-right pull-right"></i>
     </a>
     <div class="sub-menu-admin" style="display:none;">
-        <a class="list-group-item" href="{{ url('/admin/new-category') }}">New Feature</a>
-        <a class="list-group-item" href="{{ url('/admin/categories') }}">All Features</a>
+        <a class="list-group-item" href="{{ url('/admin/new-feature') }}">New Feature</a>
+        <a class="list-group-item" href="{{ url('/admin/features') }}">All Features</a>
     </div>
 
     <a href="{{ url('/admin/banners') }}" class="list-group-item">

@@ -16,4 +16,19 @@ class HomeController extends Controller
     {
         return view('admin.home');
     }
+
+    public function features()
+    {
+        return view('admin.features');
+    }
+    
+    public function newFeature()
+    {
+        return view('admin.newFeature');
+    }
+
+    public function addNewFeature()
+    {
+        dd(request()->all());
+    }
 }
