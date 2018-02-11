@@ -32,6 +32,15 @@ class HomeController extends Controller
 
     public function addNewFeature()
     {
-        dd(request()->all());
+        $this->validate(request(), [
+            'en_name' => 'required',
+            'ru_name' => 'required',
+            'hy_name' => 'required',
+        ]);
+
+        if(Feature::create(request()->all())){
+            return redirect()->back()->with('success','Feature created!');
+        };
+        return redirect()->back()->with('error','Server Error!');
     }
 }
