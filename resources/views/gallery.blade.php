@@ -21,7 +21,7 @@
 			<div class="container">
 				<ul class="gallery">
 					@forelse($images as $image)
-			        <li class="gallery__item" data-src="{{ $image->getPathName() }}">
+			        <li class="gallery__item" data-src="{{ url($image->getPathName()) }}">
 		            	<img src="{{ url($image->getPathName()) }}" />
 			        </li>
 					@endforeach
