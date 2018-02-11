@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Feature;
+use App\Models\Room;
+use App\Models\Media;
 
 class HomeController extends Controller
 {
