@@ -33,64 +33,14 @@ $(document).on('click', '.close_error', function(){
     $(this).parent().fadeOut('slow');
 });
 
-//                                    Config functional
+//                                    Feature functional
 // ========================================================================================================
-$(document).on('click', '.saveNumberChanges', function(){
-    var en_desc = $(this).siblings('#confNumber').val();
-    title = 'number';
-    $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $.post("/admin/setConfigs", {en_desc, title }, function(data, status){
-	})
-})
-
-$(document).on('click', '.saveSupportChanges', function(){
-    var en_desc = $(this).siblings('#confSupport').val();
-    title = 'support';
-    $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $.post("/admin/setConfigs", {en_desc, title }, function(data, status){
-	})
-})
-
-$(document).on('click', '.saveEmailChanges', function(){
-    var en_desc = $(this).siblings('#confEmail').val();
-    var title = 'email';
-    $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $.post("/admin/setConfigs", {en_desc, title}, function(data, status){
-	})
-})
-
-$(document).on('click', '.saveAddressChanges', function(){
-    var en_desc = $(this).parents('.well').find('#confEnAddress').val();
-    var am_desc = $(this).parents('.well').find('#confAmAddress').val();
-    var ru_desc = $(this).parents('.well').find('#confRuAddress').val();
-    var ge_desc = $(this).parents('.well').find('#confGeAddress').val();
-    var title = 'address';
-    $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $.post("/admin/setConfigs", {title,en_desc, am_desc, ru_desc, ge_desc }, function(data, status){
-	})
-})
-
-//                                    User functional
-// ========================================================================================================
-
-$(document).on('click', '.deleteCurrUser', function(){
-    userId = $(this).data("user-id");
+$(document).on('click', '.deleteFeature', function(event){
+    event.preventDefault();
+    href = $(this).attr("href");
     $(".yesOrNo").show();
-    $(".yesOrNo form").attr('action', '/admin/deleteUser');
-    $(".yesOrNo form input[name=hiddenId]").val(userId);
+    $(".yesOrNo form").attr('action', href);
     $(".yesOrNo form").submit(function(e){e.preventDefault();});
-})
-
-$(document).on('click', '.editCurrUser', function(){
-    userId = $(this).data("user-id");
-    oldUsername = $(this).parent().siblings('.usersTableCurUsername').text();
-    oldEmail = $(this).parent().siblings('.usersTableCurEmail').text();
-    oldSelect = $(this).parent().siblings('.usersTableCurRole').text();
-    $("#editUser").modal('show');
-    $("#editUser input[name=userId]").val(userId);
-    $("#editUser input[name=username]").val(oldUsername);
-    $("#editUser input[name=email]").val(oldEmail);
-    $('#editUser option[value=' + oldSelect + ']').attr('selected',true);
 })
 
 $(document).on('click', '.answerYes', function(){
@@ -100,52 +50,6 @@ $(document).on('click', '.answerYes', function(){
 
 $(document).on('click', '.answerNo', function(){
     $(".yesOrNo").hide();
-})
-
-//                                    Services functional
-// ========================================================================================================
-$(document).on('click', '.editCurrService', function(){
-    serviceId = $(this).data("service-id");
-    $.ajaxSetup({ headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
-    $.post("/admin/getCurrService", {serviceId}, function(data, status){
-        $(".addService form").attr('action', '/admin/editService');
-        $(".addService form .modal-body input[name=id]").remove();
-        $(".addService form :submit").text('Edit Service');
-        $(".addService form .modal-body").prepend('<input type="hidden" name="id" value="'+serviceId+'">');
-        $(".addService form .modal-body input[name=en_title]").val(data.en_title);
-        $(".addService form .modal-body input[name=am_title]").val(data.am_title);
-        $(".addService form .modal-body input[name=ru_title]").val(data.ru_title);
-        $(".addService form .modal-body input[name=ge_title]").val(data.ge_title);
-        $(".addService form .modal-body textarea[name=en_desc]").text(data.en_desc);
-        $(".addService form .modal-body textarea[name=am_desc]").text(data.am_desc);
-        $(".addService form .modal-body textarea[name=ru_desc]").text(data.ru_desc);
-        $(".addService form .modal-body textarea[name=ge_desc]").text(data.ge_desc);
-        $("#addService").modal('show');
-    }, "json")
-})
-
-$(document).on('click', '.addNewService', function(){
-    $(".addService form").attr('action', '/admin/addService');
-    $(".addService form .modal-body input[name=id]").remove();
-    $(".addService form :submit").text('Add Service');
-    $(".addService form .modal-body input[name=en_title]").val('');
-    $(".addService form .modal-body input[name=am_title]").val('');
-    $(".addService form .modal-body input[name=ru_title]").val('');
-    $(".addService form .modal-body input[name=ge_title]").val('');
-    $(".addService form .modal-body input[name=icon]").val('');
-    $(".addService form .modal-body textarea[name=en_desc]").text('');
-    $(".addService form .modal-body textarea[name=am_desc]").text('');
-    $(".addService form .modal-body textarea[name=ru_desc]").text('');
-    $(".addService form .modal-body textarea[name=ge_desc]").text('');
-    $("#addService").modal('show');
-})    
-
-$(document).on('click', '.deleteCurrServise', function(){
-    serviceId = $(this).data("service-id");
-    $(".yesOrNo").show();
-    $(".yesOrNo form").attr('action', '/admin/deleteService');
-    $(".yesOrNo form input[name=hiddenId]").val(serviceId);
-    $(".yesOrNo form").submit(function(e){e.preventDefault();});
 })
 
 
@@ -190,15 +94,4 @@ $('.list-parent').click(function () {
         tip.removeClass('fa-angle-double-down');
         tip.addClass('fa-angle-double-right')
     }
-})
-
-$(".animateForm input, .animateForm textarea").focus(function(){
-    console.log($(this).siblings("label"))
-    $(this).siblings("label").show();
-    $(this).siblings("label").addClass('animated fadeInUp');
-});
-
-$(".animateForm input, .animateForm textarea").blur(function(){
-    $(this).siblings("label").hide();
-    $(this).siblings("label").removeClass('animated fadeInUp');
 })

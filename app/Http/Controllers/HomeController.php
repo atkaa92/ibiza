@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Feature;
 use App\Models\Room;
 use App\Models\Media;
+use DB;
 
 class HomeController extends Controller
 {
@@ -44,6 +45,25 @@ class HomeController extends Controller
 
     public function editFeature($id)
     {
-        dd($id);
+        $this->validate(request(), [
+            'en_name' => 'required',
+            'ru_name' => 'required',
+            'hy_name' => 'required',
+        ]);
+        $feture = Feature::where('id', $id)->first();
+        $feture->en_name = request('en_name');
+        $feture->en_name = request('en_name');
+        $feture->en_name = request('en_name');
+        if($feture->save()){
+            return redirect()->back()->with('success','Feature updated!');
+        };
+        return redirect()->back()->with('error','Server Error!');
+    }
+
+    public function deleteFeature($id)
+    {
+        Feature::where('id', $id)->delete();
+        DB::table('feature_to_room')->where('id', $id)->delete(); 
+        return redirect()->back()->with('success','Feature deleted!');
     }
 }

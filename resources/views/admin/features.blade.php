@@ -29,6 +29,7 @@
                                             <input name="en_name" value =" {{ $f->en_name }}" class="form-control" placeholder="Page En Name" required>
                                         </div>
                                     </div>
+                                    {{csrf_field()}}
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label>Feature Ru Name *</label>
@@ -63,4 +64,15 @@
         </div>
     </div>
 </section>
+<div class="yesOrNo">
+    <div class="yesOrNoContent">
+        <h3>Are you sure ???</h3>
+        <form  method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="hiddenId">
+        <form>
+        <button class="btn btn-default answerYes" >Yes</button>
+        <button class="btn btn-danger answerNo">No</button>
+    </div>
+</div>
 @endsection
