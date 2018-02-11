@@ -2317,11 +2317,11 @@ zoom: 1;
 
 @font-face {
   font-family: 'revicons';
-  src: url('../fonts/revicons.eot?5510888');
-  src: url('../fonts/revicons.eot?5510888#iefix') format('embedded-opentype'),
-       url('../fonts/revicons.woff?5510888') format('woff'),
-       url('../fonts/revicons.ttf?5510888') format('truetype'),
-       url('../fonts/revicons.svg?5510888#revicons') format('svg');
+  /*src: url('../fonts/revicons.eot?5510888');*/
+  /*src: url('../fonts/revicons.eot?5510888#iefix') format('embedded-opentype'),*/
+       /*url('../fonts/revicons.woff?5510888') format('woff'),*/
+       /*url('../fonts/revicons.ttf?5510888') format('truetype'),*/
+       /*url('../fonts/revicons.svg?5510888#revicons') format('svg');*/
   font-weight: normal;
   font-style: normal;
 }
@@ -2364,7 +2364,7 @@ zoom: 1;
 .revicon-info-circled:before { content: '\e80f'} /* '' */
 .revicon-trash:before { content: '\e801'} /* '' */
 .revicon-left-dir:before { content: '\e817'} /* '' */
-.revicon-right-dir:before { content: '\e818'} /* '' */
+.revicon-right-dir:before { font-size:32px;font-family: "FontAwesome"; content: '\f04b'} /* '' */
 .revicon-down-open:before { content: '\e83b'} /* '' */
 .revicon-left-open:before { content: '\e819'} /* '' */
 .revicon-right-open:before { content: '\e81a'} /* '' */

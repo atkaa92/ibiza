@@ -39,9 +39,6 @@
                 $(".gallery").lightGallery({
                     thumbnail:false
                 });
-                $(function() {
-                    $( ".js-datapiker" ).datepicker();
-                });
                 var head = $('.header').outerHeight();
                 var reserv = $('.section--reserv').outerHeight();
                 var wnd = $(window).height();
