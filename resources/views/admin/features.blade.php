@@ -51,7 +51,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label></label>
-                                            <a type="button" href="{{ url('admin/delete-feature/'.$f->id) }}"  class="btn btn-danger margin-top-3 deleteFeature" > Delete </a>
+                                            <a type="button" href="#" data-id="{{$f->id}}"  class="btn btn-danger margin-top-3 deleteFeature" > Delete </a>
                                         </div>
                                     </div>
                                 </form>
@@ -67,7 +67,7 @@
 <div class="yesOrNo">
     <div class="yesOrNoContent">
         <h3>Are you sure ???</h3>
-        <form  method="post">
+        <form action="{{ url('admin/') }}"  method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="hiddenId">
         <form>

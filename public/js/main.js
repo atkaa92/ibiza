@@ -37,9 +37,10 @@ $(document).on('click', '.close_error', function(){
 // ========================================================================================================
 $(document).on('click', '.deleteFeature', function(event){
     event.preventDefault();
-    href = $(this).attr("href");
+    id = $(this).data("id");
+    action = $(".yesOrNo form").attr('action');
     $(".yesOrNo").show();
-    $(".yesOrNo form").attr('action', href);
+    $(".yesOrNo form").attr('action', action +'/delete-feature/'+id );
     $(".yesOrNo form").submit(function(e){e.preventDefault();});
 })
 
