@@ -9,12 +9,6 @@ use App\Models\Media;
 
 class HomeController extends Controller
 {
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('admin.home');
@@ -22,7 +16,11 @@ class HomeController extends Controller
 
     public function features()
     {
-        return view('admin.features');
+        $features = Feature::all();
+        $data=[
+            'features' => $features
+        ];
+        return view('admin.features')->with($data);
     }
     
     public function newFeature()
