@@ -59,7 +59,6 @@ class FeaturesController extends Controller
     public function deleteFeature($id)
     {
         Feature::where('id', $id)->delete();
-        DB::table('feature_to_room')->where('id', $id)->delete(); 
         return redirect()->back()->with('success','Feature deleted!');
     }
 }

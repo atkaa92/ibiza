@@ -4,7 +4,7 @@
 <section id="breadcrumb">
     <div class="container">
         <ol class="breadcrumb">
-            <li class="active">Dashboard / Features</li>
+            <li class="active">Dashboard / New Feature</li>
         </ol>
     </div>
 </section>
