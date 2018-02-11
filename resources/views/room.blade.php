@@ -17,8 +17,8 @@
 			</div>
 			<div class="top-info cf">
 				<div class="container">
-					<h1 class="top-info__title pull-left">Շոգեբաղնիք Ռուսական From DB</h1>
-					<p class="top-info__price pull-right"><b>20000 {{ trans('data.dram') }} </b><small>{{ trans('data.hour') }}</small></p>
+					<h1 class="top-info__title pull-left">{{ getPropByLang($room,'name') }}</h1>
+					<p class="top-info__price pull-right"><b>{{ $room->price }} {{ trans('data.dram') }} </b><small>{{ trans('data.hour') }}</small></p>
 				</div>
 			</div>
 		</div>
@@ -31,11 +31,11 @@
 								<div class="loader" style="display: none;"></div>
 							</div>
 							<ul class="slider-inner__thumbs clearfix">
-								@for($i = 0; $i < 3 ; $i++)
+								@foreach(unserialize($room->images) as $image)
 									<li class="slider-inner__thumbs-item thumb-active">
-										<img alt="" src='{{ asset("/images/rooms/Cottage_1/cottage_$i.jpg") }}'>
+										<img alt="" src='{{ $image }}'>
 									</li>
-								@endfor
+								@endforeach
 							</ul>
 						</div>
 					</div>
@@ -52,14 +52,14 @@
 					<h2 class='secondary-title'>{{ trans('data.desc') }}</h2>
 					<div class='section__info section__info--left'>
 						<p>
-							Փայտով տաքացվող դասակն ռուսական շոգեբաղնիք․ այստեղ օգտագործվում են նաև մի շարք խոտաբույսերի ու յուղերի թուրմեր, ինչը շատ բարենպաստ է ազդում հատկապես շնչուղիների վրա
+							{{ getPropByLang($room,'desc') }}
 						</p>
 					</div>
 					<div class="description">
 						<ul class="list list--description">
-							@for($i = 0; $i < 5 ; $i++)
-								<li class="list__item">Ռուսական Սաունա</li>		
-							@endfor
+							@foreach($features as $feature)
+								<li class="list__item">{{ getPropByLang($feature,'name') }}</li>
+							@endforeach
 						</ul>
 					</div>
 				</div>

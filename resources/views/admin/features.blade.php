@@ -70,7 +70,7 @@
         <form action="{{ url('admin/') }}"  method="post">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <input type="hidden" name="hiddenId">
-        <form>
+        </form>
         <button class="btn btn-default answerYes" >Yes</button>
         <button class="btn btn-danger answerNo">No</button>
     </div>

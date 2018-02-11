@@ -48,8 +48,8 @@ class FeaturesController extends Controller
         ]);
         $feture = Feature::where('id', $id)->first();
         $feture->en_name = request('en_name');
-        $feture->en_name = request('en_name');
-        $feture->en_name = request('en_name');
+        $feture->ru_name = request('ru_name');
+        $feture->hy_name = request('hy_name');
         if($feture->save()){
             return redirect()->back()->with('success','Feature updated!');
         };

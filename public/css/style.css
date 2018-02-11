@@ -5,9 +5,7 @@ textarea{
   resize: vertical;
   min-height: 150px;
 }
-.room-name{
-  min-width: 203px;
-}
+
 input[type=checkbox]{
   display: inline;
   min-width: inherit!important;
@@ -16,7 +14,7 @@ input[type=checkbox]{
   margin-bottom: 15px;
 }
 .room-albom{
-  max-height: 150px;
+  max-height: 350px;
   overflow-y:scroll;
 }
 /* Navbar */

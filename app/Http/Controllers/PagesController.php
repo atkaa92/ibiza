@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feature;
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -26,16 +28,24 @@ class PagesController extends Controller
 
     public function rooms()
     {
+        $rooms = Room::paginate(1);
+        $feature_model = new Feature();
         $data = [
-            'currPage' => 'rooms'
+            'currPage' => 'rooms',
+            'rooms' => $rooms,
+            'model' => $feature_model
         ];
         return view('rooms')->with($data);
     }
 
     public function room($id)
     {
+        $room = Room::find($id);
+        $features = Feature::whereIn('id',unserialize($room->features))->get();
         $data = [
-            'currPage' => 'rooms'
+            'currPage' => 'rooms',
+            'room' => $room,
+            'features' => $features
         ];
         return view('room')->with($data);
     }

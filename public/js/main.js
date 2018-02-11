@@ -126,3 +126,7 @@ function responsive_filemanager_callback(field_id){
 $(document).on('click','.rm-image',function () {
     $(this).parent().remove()
 })
+
+$('.delete-room').click(function () {
+    remove_id = $(this).parent().attr('data-id')
+})
