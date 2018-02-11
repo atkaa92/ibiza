@@ -26,9 +26,9 @@
                                     <div style="overflow: hidden">
                                         <div class="col-xs-10">
                                             <div class="form-inline">
-                                                <input name="en_name" required placeholder="English name" class="form-control">
-                                                <input name="ru_name" required placeholder="Russian name" class="form-control">
-                                                <input name="hy_name" required placeholder="Armenian name" class="form-control">
+                                                <input name="en_name" required placeholder="English name" class="form-control room-name">
+                                                <input name="ru_name" required placeholder="Russian name" class="form-control room-name">
+                                                <input name="hy_name" required placeholder="Armenian name" class="form-control room-name">
                                             </div>
                                             <hr class="clearfix">
                                             <div class="form-inline">
