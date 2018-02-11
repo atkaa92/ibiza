@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feature;
 use App\Models\Room;
+use \Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -52,8 +53,12 @@ class PagesController extends Controller
 
     public function gallery()
     {
+
+
+        $images = File::allFiles('uploads/source');
         $data = [
-            'currPage' => 'gallery'
+            'currPage' => 'gallery',
+            'images' => $images
         ];
         return view('gallery')->with($data);
     }

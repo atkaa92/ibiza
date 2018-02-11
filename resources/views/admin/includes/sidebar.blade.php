@@ -19,8 +19,4 @@
         <a class="list-group-item" href="{{ url('/admin/features') }}">All Features</a>
     </div>
 
-    <a href="{{ url('/admin/banners') }}" class="list-group-item">
-        <span class="fa fa-picture-o" aria-hidden="true"></span> Gallery
-    </a>
-
 </div>
