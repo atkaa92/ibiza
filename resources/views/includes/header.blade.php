@@ -12,11 +12,11 @@
 				</div>
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul class="nav-list">
-						<li class="{{ $currPage == 'home' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/">Գլխավոր</a></li>
-						<li class="{{ $currPage == 'about' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/about">Մեր Մասին</a></li>
-						<li class="{{ $currPage == 'rooms' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/rooms">Սենյակներ</a></li>
-						<li class="{{ $currPage == 'gallery' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/gallery">Նկարներ</a></li>
-						<li class="{{ $currPage == 'contacts' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/contacts">Կապ</a></li>
+						<li class="{{ $currPage == 'home' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/">{{ trans('data.menu-home') }}</a></li>
+						<li class="{{ $currPage == 'about' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/about">{{ trans('data.menu-about') }}</a></li>
+						<li class="{{ $currPage == 'rooms' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/rooms">{{ trans('data.menu-rooms') }}</a></li>
+						<li class="{{ $currPage == 'gallery' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/gallery">{{ trans('data.menu-gallery') }}</a></li>
+						<li class="{{ $currPage == 'contacts' ? 'nav-list__item nav-list__item--active' : 'nav-list__item' }}"><a href="/contacts">{{ trans('data.menu-contacts') }}</a></li>
 					</ul>
 				</div>
 				<!-- language -->

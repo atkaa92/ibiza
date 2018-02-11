@@ -34,22 +34,22 @@
 		</section>
 		<section class="section section--int">
 			<div class="container">
-				<h1 class="main-title">Բարի գալուստ <strong>IBIZA hotel &amp; sauna</strong></h1>
+				<h1 class="main-title">{{ trans('data.welcome') }} <strong>IBIZA hotel &amp; sauna</strong></h1>
 				<div class="section__info">
 					<p>
-						Այցելուների տրամադրության տակ են 1, 2 և 3 սենյականոց շքեղ հյուրանոցային համարներ՝  անհատական ջակուզիով և դեպի բնությունը բացվող ակնահաճո տեսարանով պատշգամբներով։ Այստեղ համատեղվում են ավանդականը և հարմարավետության վերաբերյալ ժամանակակից պատկերացումները։
+						{{ trans('data.welcome-text') }}
 					</p>
-					<a href="#" class="btn btn--primary">ավելին</a>
+					<a href="#" class="btn btn--primary">{{ trans('data.more') }}</a>
 				</div>
 			</div>
 		</section>
 		<section class="section section--bg"></section>
 		<section class="section section--int">
 			<div class="container">
-				<h1 class="main-title">Շոքեբաղնիքներ</h1>
+				<h1 class="main-title">{{ trans('data.saunas') }} </h1>
 				<div class="section__info">
 					<p>
-					    Լավագույն ավանդական շոքեբաղնիքները Իբիցայում։ Վայր, որտեղ լավագույնս համատեղվում են օգտակարն ու հաճելին։Շոգեբաղնիքներին բնորոշ էթիկայի բոլոր նրբություններին տիրապետող բարձրակարգ մասնագետները կօգնեն ձեզ թոթափել մտավոր և ֆիզիկական ծանրաբեռնվածությունը և վերագտնել կենսական էներգիան։
+						{{ trans('data.saunas-text') }} 
 					</p>
 				</div>
 				<div class="offers">
@@ -65,7 +65,7 @@
                                         @endfor
                                     </ul>
                                 </figcaption>
-                                <a href="/room/{{$i}}" class="media__link">Ավելին <i class="fa fa-angle-right"></i></a>
+                                <a href="/room/{{$i}}" class="media__link">{{ trans('data.more') }} <i class="fa fa-angle-right"></i></a>
                             </figure>
                         </div>
                     @endfor

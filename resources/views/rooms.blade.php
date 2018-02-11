@@ -6,14 +6,14 @@
 			<div class="container">
 				<ul class="breadcrumb">
 					<li class="breadcrumb__item">
-						<a href="#">Գլխավոր</a>
+						<a href="#">{{ trans('data.menu-home') }}</a>
 					</li>
-					<li class="breadcrumb__item">Սենյակներ</li>
+					<li class="breadcrumb__item">{{ trans('data.menu-rooms') }}</li>
 				</ul>
 			</div>
 			<div class="top-info cf">
 				<div class="container">
-					<h1 class="top-info__title pull-left">Սենյակներ</h1>
+					<h1 class="top-info__title pull-left">{{ trans('data.menu-rooms') }}</h1>
 				</div>
 			</div>
 		</div>
@@ -35,12 +35,12 @@
 									</div>
 									<aside class="media__aside">
 										<header class="media__aside-header">
-											<span class="price">29000<small> Դրամ</small></span>
-												<p class='hour'>1 Ժամ</p>
-												<p class='hour'>8 Ժամ</p>
+											<span class="price">29000<small> {{ trans('data.dram') }}</small></span>
+												<p class='hour'>1 {{ trans('data.hour') }}</p>
+												<p class='hour'>8 {{ trans('data.hour') }}</p>
 										</header>
 										<footer class="media__aside-footer">
-											<a href="/room/{{$i}}" class="btn btn--secondary">Ավելին</a>
+											<a href="/room/{{$i}}" class="btn btn--secondary">{{ trans('data.more') }}</a>
 										</footer>
 									</aside>
 								</div>

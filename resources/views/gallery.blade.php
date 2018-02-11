@@ -6,14 +6,14 @@
 			<div class="container">
 				<ul class="breadcrumb">
 					<li class="breadcrumb__item">
-						<a href="#">Գլխավոր</a>
+						<a href="#">{{ trans('data.menu-home') }}</a>
 					</li>
-					<li class="breadcrumb__item">Նկարներ</li>
+					<li class="breadcrumb__item">{{ trans('data.menu-gallery') }}</li>
 				</ul>
 			</div>
 			<div class="top-info cf">
 				<div class="container">
-					<h1 class="top-info__title pull-left">Նկարներ</h1>
+					<h1 class="top-info__title pull-left">{{ trans('data.menu-gallery') }}</h1>
 				</div>
 			</div>
 		</div>

@@ -21,22 +21,22 @@
 					<div class="footer__row">
 						<address class="address">
 							<div class="address__row">
-								<span class="address__cell address__name">tel:</span> 
+								<span class="address__cell address__name">{{ trans('data.phone') }}:</span> 
 								<span class="address__cell address__inf"><b>+ 374 10 600 101; <br class="br-hide"> + 374 10 600 202; <br> + 374 11 570 020</b></span>
 							</div>
 							<div class="address__row">
-								<span class="address__cell address__name">Հասցե:</span> 
-								<span class="address__cell address__inf">Մյասնիկյանի պողոտա 18 / 5</span>
+								<span class="address__cell address__name">{{ trans('data.address') }}:</span> 
+								<span class="address__cell address__inf">{{ trans('data.address-text') }}</span>
 							</div>
 							<div class="address__row">
-								<span class="address__cell address__name">էլ-փոստ:</span> 
+								<span class="address__cell address__name">{{ trans('data.email') }}:</span> 
 								<span class="address__cell address__inf"><a href="mailto:info@ibiza-hotel.am">info@ibiza-hotel.am</a></span>
 							</div>
 						</address>
 					</div>
 					<div class="footer__row">
 						<ul class="paymant-icons">
-							<li class="paymant-icons__item">Մենք ընդունում ենք :</li>
+							<li class="paymant-icons__item">{{ trans('data.we-accept') }} :</li>
 							<li class="paymant-icons__item"><img src="/images/pay1.png" alt=""></li>
 							<li class="paymant-icons__item"><img src="/images/pay2.png" alt=""></li>
 							<li class="paymant-icons__item"><img src="/images/pay3.png" alt=""></li>
