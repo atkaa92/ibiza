@@ -39,11 +39,12 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth',]], function() {
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/features', 'HomeController@features');
-    Route::get('/new-feature', 'HomeController@newFeature');
-    Route::post('/add-feature', 'HomeController@addNewFeature');
-    Route::post('/edit-feature/{id}', 'HomeController@editFeature');
-    Route::post('/delete-feature/{id}', 'HomeController@deleteFeature');
+
+    Route::get('/features', 'Admin\FeaturesController@features');
+    Route::get('/new-feature', 'Admin\FeaturesController@newFeature');
+    Route::post('/add-feature', 'Admin\FeaturesController@addNewFeature');
+    Route::post('/edit-feature/{id}', 'Admin\FeaturesController@editFeature');
+    Route::post('/delete-feature/{id}', 'Admin\FeaturesController@deleteFeature');
 
 
     Route::get('/rooms', 'HomeController@rooms');
