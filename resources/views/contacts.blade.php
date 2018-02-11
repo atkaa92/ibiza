@@ -68,19 +68,19 @@
 							<form method="post" action="/sentMail" role="form" data-toggle="validator" class="form form--single cf shake" id="contactForm">
 								<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 									<label for="name" class="form__name form__name--rq">Անուն</label>
-									<input id="name" type="text" class="{{ $errors->has('name') ? ' border-red' : '' }} form__fild" name="name" value="{{ old('name') }}" >
+									<input id="name" type="text" class="{{ $errors->has('name') ? ' border-red' : '' }} form__fild" name="name" value="{{ old('name') }}" required>
 								</div>
 								<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 									<label for="email" class="form__name form__name--rq">Էլ-Փոստ</label>
-									<input id="email" type="email" class="{{ $errors->has('email') ? ' border-red' : '' }} form__fild" name="email" value="{{ old('email') }}" >
+									<input id="email" type="email" class="{{ $errors->has('email') ? ' border-red' : '' }} form__fild" name="email" value="{{ old('email') }}" required>
 								</div>
 								<div class=" form-group{{ $errors->has('subject') ? ' has-error' : '' }}">
 									<label for="subject" class="form__name form__name--rq">Վերնագիր</label>
-									<input id="subject" type="text" class="{{ $errors->has('subject') ? ' border-red' : '' }}  form__fild" name="subject" value="{{ old('subject') }}" >
+									<input id="subject" type="text" class="{{ $errors->has('subject') ? ' border-red' : '' }}  form__fild" name="subject" value="{{ old('subject') }}" required>
 								</div>
 								<div class=" form-group">
 									<label for="messsage" class="form__name form__name--rq">Նամակ</label>
-									<textarea class="{{ $errors->has('messsage') ? ' border-red' : '' }} form__fild" id="messsage" name="messsage"></textarea >
+									<textarea class="{{ $errors->has('messsage') ? ' border-red' : '' }} form__fild" id="messsage" name="messsage"></textarea required>
 								</div>
 								{{csrf_field()}}
 								<div id="msgSubmit" class="h3 text-center hidden"></div>

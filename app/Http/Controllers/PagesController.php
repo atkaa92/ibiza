@@ -81,10 +81,6 @@ class PagesController extends Controller
             $message->from('tryl1tvin@gmail.com', $name);
             $message->replyTo('tryl1tvin@gmail.com', $name);
         });
-
-        if (Mail::failures()) {
-            return redirect()->back()->with('error', 'Возникли проблемы. Попробуйте задать вопрос еще раз.');;
-        }
         return redirect()->back()->with('success', 'Спасибо за ваш вопрос. ');;
     }
 }
