@@ -87,7 +87,7 @@
 							<tr>
 								<td align="center" valign="top">
 
-									<table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#3498db">
+									<table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#27ae60">
 										<tr>
 											<td align="center" valign="top">
 										
@@ -155,7 +155,7 @@
 												<table border="0" cellpadding="30" cellspacing="0" width="500" class="flexibleContainer">
 													<tr>
 														<td style="padding-top:0;" align="center" valign="top" width="500" class="flexibleContainerCell">
-															<table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #3498DB;">
+															<table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #27ae60;">
 																<tr>
 																	<td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
 																		<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="http://www.ibiza-hotel.am/en/contacts.php" target="_blank">Ibiza Hotel</a>
