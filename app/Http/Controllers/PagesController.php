@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 
 class PagesController extends Controller
 {
@@ -30,6 +32,14 @@ class PagesController extends Controller
         return view('rooms')->with($data);
     }
 
+    public function room($id)
+    {
+        $data = [
+            'currPage' => 'rooms'
+        ];
+        return view('room')->with($data);
+    }
+
     public function gallery()
     {
         $data = [
@@ -44,5 +54,36 @@ class PagesController extends Controller
             'currPage' => 'contacts'
         ];
         return view('contacts')->with($data);
+    }
+
+    public function sentMail()
+    {
+        $this->validate(request(), [
+            'name' => 'required|max:199|min:1',
+            'email' => 'required|email|max:199',
+            'messsage' => 'required|min:3',
+            'subject' => 'required'
+        ]);
+        
+        $email = 'atkaa92@gmail.com';
+        $subject = request('subject');
+
+        $mail_data = [
+            'name' => request('name'),
+            'email' => request('email'),
+            'subject' => request('subject'),
+            'messsage' => request('messsage'),
+        ];
+
+        $mail = Mail::send('mails.contacts', $mail_data, function($message) use ($email,$subject){
+            $message->to($email)->subject($subject);
+            $message->from('tryl1tvin@gmail.com', $subject);
+            $message->replyTo('tryl1tvin@gmail.com', $subject);
+        });
+
+        if (Mail::failures()) {
+            return redirect()->back()->with('error', 'Возникли проблемы. Попробуйте задать вопрос еще раз.');;
+        }
+        return redirect()->back()->with('success', 'Спасибо за ваш вопрос. ');;
     }
 }

@@ -6157,6 +6157,9 @@ input:focus {
     .offers__col:nth-child(3) {
       text-align: right; }
 
+  .border-red{
+    border: 2px solid #b22b18;
+  }
 /* ================== footer ============== */
 .footer {
   position: relative; }

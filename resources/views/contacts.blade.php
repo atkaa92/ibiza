@@ -65,19 +65,24 @@
 					<div class="grid__col-md-4 grid__col-sm-4 grid__col-xs-12">
 						<div class="reservation">
 							<h1 class="main-title main-title-cl">Ուղարկել Նամակ</h1>
-							<form role="form" data-toggle="validator" class="form form--single cf shake" id="contactForm">
-								<label for="name" class="form__name form__name--rq">Անուն</label>
-								<input type="text" id="name" class="form__fild" data-error="NEW ERROR MESSAGE">
-								<div class="help-block with-errors"></div>
-								<label for="email" class="form__name form__name--rq">Էլ-Փոստ</label>
-								<input type="email" id="email" class="form__fild" required>
-								<div class="help-block with-errors"></div>
-								<label for="subject" class="form__name form__name--rq">Վերնագիր</label>
-								<input type="text" id="subject" class="form__fild" required>
-								<div class="help-block with-errors"></div>
-								<label for="message" class="form__name form__name--rq">Նամակ</label>
-								<textarea class="form__fild" id="message"></textarea required>
-								<div class="help-block with-errors"></div>
+							<form method="post" action="/sentMail" role="form" data-toggle="validator" class="form form--single cf shake" id="contactForm">
+								<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+									<label for="name" class="form__name form__name--rq">Անուն</label>
+									<input id="name" type="text" class="{{ $errors->has('name') ? ' border-red' : '' }} form__fild" name="name" value="{{ old('name') }}" >
+								</div>
+								<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+									<label for="email" class="form__name form__name--rq">Էլ-Փոստ</label>
+									<input id="email" type="email" class="{{ $errors->has('email') ? ' border-red' : '' }} form__fild" name="email" value="{{ old('email') }}" >
+								</div>
+								<div class=" form-group{{ $errors->has('subject') ? ' has-error' : '' }}">
+									<label for="subject" class="form__name form__name--rq">Վերնագիր</label>
+									<input id="subject" type="text" class="{{ $errors->has('subject') ? ' border-red' : '' }}  form__fild" name="subject" value="{{ old('subject') }}" >
+								</div>
+								<div class=" form-group">
+									<label for="messsage" class="form__name form__name--rq">Նամակ</label>
+									<textarea class="{{ $errors->has('messsage') ? ' border-red' : '' }} form__fild" id="messsage" name="messsage"></textarea >
+								</div>
+								{{csrf_field()}}
 								<div id="msgSubmit" class="h3 text-center hidden"></div>
 								<div class="form__btn-wrap" id="#msgSubmit">
 									<button class="btn btn--secondary form__btn" type="submit" id="form-submit">Ուղարկել</button>

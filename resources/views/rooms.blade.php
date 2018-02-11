@@ -22,7 +22,7 @@
 				<div class="rooms items">
 					@for($i = 1; $i<= 5;  $i++)
 						<div class="media media--row">
-							<a class="media__img" href="/room-single/{{$i}}'"><img src="/images/rooms/{{$i}}.jpg" alt=""></a>
+							<a class="media__img" href="/room/{{$i}}'"><img src="/images/rooms/{{$i}}.jpg" alt=""></a>
 							<div class="media__body cf">
 								<div class="media__body-wrap">
 									<div class="media__body-inner">
@@ -40,7 +40,7 @@
 												<p class='hour'>8 Ժամ</p>
 										</header>
 										<footer class="media__aside-footer">
-											<a href="/room-single/{{$i}}" class="btn btn--secondary">Ավելին</a>
+											<a href="/room/{{$i}}" class="btn btn--secondary">Ավելին</a>
 										</footer>
 									</aside>
 								</div>

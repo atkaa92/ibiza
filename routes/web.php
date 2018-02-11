@@ -23,22 +23,17 @@ Route::group(
     ],
     function()
     {
-        /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-        Route::get('/', function()
-        {
-            return view('home');
-        });
-
-        Route::get('test',function(){
-            return view('home');
-        });
-
         Route::get('/', 'PagesController@home');
         Route::get('/about', 'PagesController@about');
         Route::get('/rooms', 'PagesController@rooms');
+        Route::get('/room/{id}', 'PagesController@room');
         Route::get('/gallery', 'PagesController@gallery');
         Route::get('/contacts', 'PagesController@contacts');
-    });
+    }
+);
+
+Route::post('/sentMail', 'PagesController@sentMail');
+
 
 Auth::routes();
 

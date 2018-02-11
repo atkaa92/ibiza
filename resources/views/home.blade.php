@@ -56,16 +56,16 @@
                     @for($i = 1; $i<= 3;  $i++)
                         <div class="offers__col">
                             <figure class="media media--bordered">
-                                <a href="/room-single/{{$i}}" class="media__img"><img src="/images/rooms/{{$i}}.jpg" alt=""></a>
+                                <a href="/room/{{$i}}" class="media__img"><img src="/images/rooms/{{$i}}.jpg" alt=""></a>
                                 <figcaption class="media__body media__body--big">
-                                    <h2 class="media__title media__title--big"><a href="/room-single/{{$i}}">Շոգեբաղնիք Արևելյան</a></h2>
+                                    <h2 class="media__title media__title--big"><a href="/room/{{$i}}">Շոգեբաղնիք Արևելյան</a></h2>
                                     <ul class="media__list list">
                                         @for($j = 1; $j<= 3;  $j++)
                                             <li class="list__item">Շոգեբաղնիք Արևելյան</li>
                                         @endfor
                                     </ul>
                                 </figcaption>
-                                <a href="/room-single/{{$i}}" class="media__link">Ավելին <i class="fa fa-angle-right"></i></a>
+                                <a href="/room/{{$i}}" class="media__link">Ավելին <i class="fa fa-angle-right"></i></a>
                             </figure>
                         </div>
                     @endfor
