@@ -6,7 +6,7 @@
 			<div class="container">
 				<ul class="breadcrumb">
 					<li class="breadcrumb__item">
-						<a href="#">{{ trans('data.menu-home') }}</a>
+						<a href="/">{{ trans('data.menu-home') }}</a>
 					</li>
 					<li class="breadcrumb__item">{{ trans('data.menu-contacts') }}</li>
 				</ul>

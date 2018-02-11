@@ -7,10 +7,10 @@
 
 				<ul class="breadcrumb">
 					<li class="breadcrumb__item">
-						<a href="index.php">{{ trans('data.menu-home') }}</a>
+						<a href="/">{{ trans('data.menu-home') }}</a>
 					</li>
 					<li class="breadcrumb__item">
-						<a href="rooms.php">{{ trans('data.menu-rooms') }}</a>
+						<a href="/rooms">{{ trans('data.menu-rooms') }}</a>
 					</li>
 					<li class="breadcrumb__item">Շոգեբաղնիք Ռուսական From DB</li>
 				</ul>
