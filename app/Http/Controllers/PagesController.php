@@ -67,6 +67,7 @@ class PagesController extends Controller
         
         $email = 'atkaa92@gmail.com';
         $subject = request('subject');
+        $name = request('name');
 
         $mail_data = [
             'name' => request('name'),
@@ -75,10 +76,10 @@ class PagesController extends Controller
             'messsage' => request('messsage'),
         ];
 
-        $mail = Mail::send('mails.contacts', $mail_data, function($message) use ($email,$subject){
+        $mail = Mail::send('mails.contacts', $mail_data, function($message) use ($email,$subject, $name){
             $message->to($email)->subject($subject);
-            $message->from('tryl1tvin@gmail.com', $subject);
-            $message->replyTo('tryl1tvin@gmail.com', $subject);
+            $message->from('tryl1tvin@gmail.com', $name);
+            $message->replyTo('tryl1tvin@gmail.com', $name);
         });
 
         if (Mail::failures()) {
