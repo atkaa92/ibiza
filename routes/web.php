@@ -42,6 +42,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth',]], function() {
     Route::get('/features', 'HomeController@features');
     Route::get('/new-feature', 'HomeController@newFeature');
     Route::post('/add-feature', 'HomeController@addNewFeature');
+    Route::post('/edit-feature/{id}', 'HomeController@editFeature');
 
 
     Route::get('/rooms', 'HomeController@rooms');

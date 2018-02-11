@@ -41,4 +41,9 @@ class HomeController extends Controller
         };
         return redirect()->back()->with('error','Server Error!');
     }
+
+    public function editFeature($id)
+    {
+        dd($id);
+    }
 }
