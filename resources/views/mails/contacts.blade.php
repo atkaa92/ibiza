@@ -11,7 +11,7 @@
 			table{border-collapse:collapse;}
 			table[id=bodyTable] {width:100%!important;margin:auto;max-width:500px!important;color:#7A7A7A;font-weight:normal;}
 			img, a img{border:0; outline:none; text-decoration:none;height:auto; line-height:100%;}
-			a {text-decoration:none !important;border-bottom: 1px solid;}
+			a {text-decoration:none !important;border-bottom: 1px solid;color:#fff}
 			h1, h2, h3, h4, h5, h6{color:#5F5F5F; font-weight:normal; font-family:Helvetica; font-size:20px; line-height:125%; text-align:Left; letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}
 			.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail/Outlook.com to display emails at full width. */
 			.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;} 
