@@ -70,9 +70,6 @@
                         </div>
 					@endforeach
 				</div>
-				<div class="offers">
-                   
-				</div>
 			</div>
 		</section>
 	</main>
