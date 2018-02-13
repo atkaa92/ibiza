@@ -53,22 +53,25 @@
 					</p>
 				</div>
 				<div class="offers">
-                    @for($i = 1; $i<= 3;  $i++)
+					 @foreach($gerRandomThree as  $room)
                         <div class="offers__col">
                             <figure class="media media--bordered">
-                                <a href="/room/{{$i}}" class="media__img"><img src="/images/rooms/{{$i}}.jpg" alt=""></a>
+                                <a href="/room/{{$room->id}}" class="media__img"><img src="{{ unserialize($room->images)[0] }}" alt=""></a>
                                 <figcaption class="media__body media__body--big">
-                                    <h2 class="media__title media__title--big"><a href="/room/{{$i}}">Շոգեբաղնիք Արևելյան</a></h2>
+                                    <h2 class="media__title media__title--big"><a href="/room/{{$room->id}}">Շոգեբաղնիք Արևելյան</a></h2>
                                     <ul class="media__list list">
-                                        @for($j = 1; $j<= 3;  $j++)
-                                            <li class="list__item">Շոգեբաղնիք Արևելյան</li>
-                                        @endfor
+										@foreach($model->whereIn('id',unserialize($room->features))->get() as $feature)
+											<li class="list__item"> {{ getPropByLang($feature,'name') }} </li>
+										@endforeach
                                     </ul>
                                 </figcaption>
-                                <a href="/room/{{$i}}" class="media__link">{{ trans('data.more') }} <i class="fa fa-angle-right"></i></a>
+                                <a href="/room/{{$room->id}}" class="media__link">{{ trans('data.more') }} <i class="fa fa-angle-right"></i></a>
                             </figure>
                         </div>
-                    @endfor
+					@endforeach
+				</div>
+				<div class="offers">
+                   
 				</div>
 			</div>
 		</section>

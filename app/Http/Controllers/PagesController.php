@@ -7,14 +7,20 @@ use App\Models\Room;
 use \Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
+use DB;
 
 class PagesController extends Controller
 {
     public function home()
     {
+        $gerRandomThree = Room::orderBy(DB::raw('RAND()'))
+                                ->take(3)
+                                ->get();
+        $model = new Room();
         $data = [
-            'currPage' => 'home'
+            'currPage' => 'home',
+            'gerRandomThree' => $gerRandomThree,
+            'model' => $model
         ];
         return view('home')->with($data);
     }
@@ -53,8 +59,6 @@ class PagesController extends Controller
 
     public function gallery()
     {
-
-
         $images = File::allFiles('uploads/source');
         $data = [
             'currPage' => 'gallery',

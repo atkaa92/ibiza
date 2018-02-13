@@ -6156,7 +6156,9 @@ input:focus {
       text-align: center; }
     .offers__col:nth-child(3) {
       text-align: right; }
-
+.offers__col img{
+  max-width: 354px;  
+}
   .border-red{
     border: 2px solid #b22b18;
   }
@@ -6262,6 +6264,9 @@ input:focus {
     width: 309px; }
 
 @media (max-width: 767px) {
+  .offers__col img{
+    max-width: 500px;  
+  }
   .form--reserv {
     margin: 0 auto;
     max-width: 450px;
