@@ -12,13 +12,13 @@
 					<li class="breadcrumb__item">
 						<a href="/rooms">{{ trans('data.menu-rooms') }}</a>
 					</li>
-					<li class="breadcrumb__item">Շոգեբաղնիք Ռուսական From DB</li>
+					<li class="breadcrumb__item">{{ getPropByLang($room,'name') }}</li>
 				</ul>
 			</div>
 			<div class="top-info cf">
 				<div class="container">
 					<h1 class="top-info__title pull-left">{{ getPropByLang($room,'name') }}</h1>
-					<p class="top-info__price pull-right"><b>{{ $room->price }} {{ trans('data.dram') }} </b><small>{{ trans('data.hour') }}</small></p>
+					<p class="top-info__price pull-right"><b>{{ $room->price }} {{ trans('data.dram') }} </b><small>{{ $room->duration }} {{ trans('data.hour') }}</small></p>
 				</div>
 			</div>
 		</div>
@@ -31,11 +31,13 @@
 								<div class="loader" style="display: none;"></div>
 							</div>
 							<ul class="slider-inner__thumbs clearfix">
-								@foreach(unserialize($room->images) as $image)
-									<li class="slider-inner__thumbs-item thumb-active">
-										<img alt="" src='{{ $image }}'>
-									</li>
-								@endforeach
+								@if($room->images)
+									@foreach(unserialize($room->images) as $image)
+										<li class="slider-inner__thumbs-item thumb-active">
+											<img alt="" src='{{ $image }}'>
+										</li>
+									@endforeach
+								@endif
 							</ul>
 						</div>
 					</div>
@@ -57,9 +59,11 @@
 					</div>
 					<div class="description">
 						<ul class="list list--description">
-							@foreach($features as $feature)
-								<li class="list__item">{{ getPropByLang($feature,'name') }}</li>
-							@endforeach
+							@if($features)
+								@foreach($features as $feature)
+									<li class="list__item">{{ getPropByLang($feature,'name') }}</li>
+								@endforeach
+							@endif
 						</ul>
 					</div>
 				</div>

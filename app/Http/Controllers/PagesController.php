@@ -15,6 +15,7 @@ class PagesController extends Controller
     {
         $gerRandomThree = Room::orderBy(DB::raw('RAND()'))
                                 ->take(3)
+                                ->where('home_item', 1)
                                 ->get();
         $model = new Room();
         $data = [
@@ -35,7 +36,8 @@ class PagesController extends Controller
 
     public function rooms()
     {
-        $rooms = Room::paginate(1);
+        $lang = request()->segment(1);
+        $rooms = Room::orderBy($lang."_name")->paginate(6);
         $feature_model = new Feature();
         $data = [
             'currPage' => 'rooms',
@@ -48,7 +50,7 @@ class PagesController extends Controller
     public function room($id)
     {
         $room = Room::find($id);
-        $features = Feature::whereIn('id',unserialize($room->features))->get();
+        $features =  ($room->features) ? Feature::whereIn('id',unserialize($room->features))->get() : '';
         $data = [
             'currPage' => 'rooms',
             'room' => $room,

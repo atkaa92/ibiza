@@ -58,11 +58,13 @@
                             <figure class="media media--bordered">
                                 <a href="/room/{{$room->id}}" class="media__img"><img src="{{ unserialize($room->images)[0] }}" alt=""></a>
                                 <figcaption class="media__body media__body--big">
-                                    <h2 class="media__title media__title--big"><a href="/room/{{$room->id}}">Շոգեբաղնիք Արևելյան</a></h2>
+                                    <h2 class="media__title media__title--big"><a href="/room/{{$room->id}}">{{ getPropByLang($room,'name') }}</a></h2>
                                     <ul class="media__list list">
-										@foreach($model->whereIn('id',unserialize($room->features))->get() as $feature)
-											<li class="list__item"> {{ getPropByLang($feature,'name') }} </li>
-										@endforeach
+										@if($room->features)
+											@foreach($model->whereIn('id',unserialize($room->features))->get() as $feature)
+												<li class="list__item"> {{ getPropByLang($feature,'name') }} </li>
+											@endforeach
+										@endif
                                     </ul>
                                 </figcaption>
                                 <a href="/room/{{$room->id}}" class="media__link">{{ trans('data.more') }} <i class="fa fa-angle-right"></i></a>

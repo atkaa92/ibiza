@@ -28,9 +28,11 @@
 									<div class="media__body-inner">
 										<h2 class="secondary-title secondary-title--media"> {{ getPropByLang($room,'name') }} </h2>
 										<ul class="list">
-											@foreach($model->whereIn('id',unserialize($room->features))->get() as $feature)
-												<li class="list__item"> {{ getPropByLang($feature,'name') }} </li>
-											@endforeach
+											@if($room->features)
+												@foreach($model->whereIn('id',unserialize($room->features))->get() as $feature)
+													<li class="list__item"> {{ getPropByLang($feature,'name') }} </li>
+												@endforeach
+											@endif
 										</ul>
 									</div>
 									<aside class="media__aside">

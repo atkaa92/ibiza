@@ -56,13 +56,17 @@
                                             </div>
                                             <hr class="clearfix">
                                             <div style="overflow: hidden">
-                                                <div class="col-xs-6">
+                                                <div class="col-xs-5">
                                                     <label>Duration</label>
                                                     <input value="{{ $some ? $some->duration : ''}}" type="number" required name="duration" placeholder="1 hour">
                                                 </div>
-                                                <div class="col-xs-6">
-                                                    <input type="number" value="{{ $some ? $some->price : ''}}" name="price" placeholder="12.000 AMD">
+                                                <div class="col-xs-5">
                                                     <label>Price</label>
+                                                    <input type="number" value="{{ $some ? $some->price : ''}}" name="price" placeholder="12.000 AMD">
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <label for="">Home Item</label>
+                                                    <input type="checkbox" {{ $some && $some->home_item ? 'checked' : ''}} name="home_item">
                                                 </div>
                                             </div>
                                         </div>
@@ -72,13 +76,13 @@
                                             <div class="room-albom">
                                                 <div class="one-img">
                                                     <img src="/images/no-image.png" width="100%">
-                                                    <input type="hidden" id="room_image">
+                                                    <input type="hidden" id="room_image" required>
                                                 </div>
-                                                @if($some)
+                                                @if($some && $some->images)
                                                     @foreach(unserialize($some->images) as $image)
                                                         <div class="one-img">
                                                             <img src="{{$image}}" width="100%">
-                                                            <input type="hidden" value="{{ $image }}" name="images[]">
+                                                            <input required type="hidden" value="{{ $image }}" name="images[]">
                                                             <button class="btn btn-danger btn-block rm-image"><i class="fa fa-remove"></i>
                                                                 Remove
                                                             </button>
@@ -93,7 +97,7 @@
                                         @foreach($features as $feature)
                                             <div class="col-xs-4">
                                                 <div class="form-group">
-                                                    <input type="checkbox" {{ ($some && in_array($feature->id, unserialize($some->features))) ? 'checked' : ''}} name="features[]" value="{{ $feature->id }}">
+                                                    <input type="checkbox" {{ ($some && $some->features && in_array($feature->id, unserialize($some->features))) ? 'checked' : ''}} name="features[]" value="{{ $feature->id }}">
                                                     <label>{{$feature->en_name}}</label>
                                                 </div>
                                             </div>

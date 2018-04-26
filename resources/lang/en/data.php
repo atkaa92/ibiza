@@ -26,7 +26,7 @@ return [
 
     //rooms
     'dram' => 'AMD',
-    'hour' => 'per hour',
+    'hour' => 'hour',
 
     //contacts
     'sent-email' => 'Send a message',

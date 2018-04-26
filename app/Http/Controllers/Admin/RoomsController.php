@@ -32,8 +32,13 @@ class RoomsController extends Controller
     public function addRoomFunc(Request $request,$id = false)
     {
         $data = $request->all();
-        $data['features'] = serialize($data['features']);
-        $data['images'] = serialize($data['images']);
+        if(isset($data['home_item'])){
+            $data['home_item'] = 1;
+        }else{
+            $data['home_item'] = 0;
+        }
+        $data['features'] = (isset($data['features'])) ?  serialize($data['features']) : '';
+        $data['images'] =  (isset($data['images'])) ? serialize($data['images']) : '';
         if(Room::updateOrCreate(['id'=>$id],$data)){
             return redirect()->back()->with('success','Room Saved');
         };
