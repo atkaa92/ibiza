@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Feature;
 use App\Models\Room;
+use App\Models\Slider;
 use \Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -13,6 +14,8 @@ class PagesController extends Controller
 {
     public function home()
     {
+        $sliders = Slider::all();
+
         $gerRandomThree = Room::orderBy(DB::raw('RAND()'))
                                 ->take(3)
                                 ->where('home_item', 1)
@@ -20,6 +23,7 @@ class PagesController extends Controller
         $model = new Room();
         $data = [
             'currPage' => 'home',
+            'sliders' => $sliders,            
             'gerRandomThree' => $gerRandomThree,
             'model' => $model
         ];

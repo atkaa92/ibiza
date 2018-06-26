@@ -51,4 +51,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth',]], function() {
     Route::get('/some-room/{id}', 'Admin\RoomsController@someRoom');
     Route::post('/add-room/{id?}', 'Admin\RoomsController@addRoomFunc');
     Route::post('/remove-room/{id?}', 'Admin\RoomsController@removeRoomFunc');
+
+    Route::get('/sliders', 'Admin\RoomsController@sliders');
+    Route::post('/add-slide', 'Admin\RoomsController@addslide');
+    Route::any('/delete-slide/{id}', 'Admin\RoomsController@deleteslide');
+    
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Feature;
 use App\Models\Room;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -48,6 +49,38 @@ class RoomsController extends Controller
     {
         if(Room::find($id)->delete()){
             return redirect()->back()->with('success','Room deleted');
+        }
+        return redirect()->back()->with('error','Server Error');
+    }
+
+    public function sliders()
+    {
+        $sliders = Slider::all();
+        $data = [
+            'sliders' => $sliders
+        ];
+        return view('admin.sliders')->with($data);
+    }
+
+    public function addslide()
+    {
+        $this->validate(request(), [
+            'images' => 'required',
+            ]);
+            
+            foreach (request('images') as $key => $value) {
+                $slide = new Slider();
+                $slide->type = 'img';
+                $slide->url = $value;
+                $slide->save();
+            }
+        return redirect()->back()->with('success','Slide saved');
+    }
+
+    public function deleteslide($id)
+    {
+        if(Slider::find($id)->delete()){
+            return redirect()->back()->with('success','Slide deleted');
         }
         return redirect()->back()->with('error','Server Error');
     }

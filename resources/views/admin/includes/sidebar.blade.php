@@ -18,5 +18,8 @@
         <a class="list-group-item" href="{{ url('/admin/new-feature') }}">New Feature</a>
         <a class="list-group-item" href="{{ url('/admin/features') }}">All Features</a>
     </div>
+    <a href="{{ url('/admin/sliders') }}" class="list-group-item list-parent">
+        <span class="fa fa-image" aria-hidden="true"></span> Slider 
+    </a>
 
 </div>

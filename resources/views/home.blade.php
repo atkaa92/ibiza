@@ -28,6 +28,11 @@
 						<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="">
 							<img src="/images/dummy.png"  alt="" data-lazyload="/images/slider/2.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
 						</li>
+						@foreach($sliders as $s)
+							<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="">
+								<img src="/images/dummy.png"  alt="" data-lazyload="{{ $s->url }}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+							</li>
+						@endforeach
 					</ul>
 				</div>
 			</div>
